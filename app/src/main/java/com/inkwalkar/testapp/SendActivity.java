@@ -1,12 +1,11 @@
 package com.inkwalkar.testapp;
 
-import android.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.content.Intent;
+import android.widget.TextView;
 
 
 public class SendActivity extends ActionBarActivity {
@@ -17,6 +16,8 @@ public class SendActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        TextView textView = (TextView) findViewById(R.id.textView);
+        textView.setText(message);
         setContentView(R.layout.activity_send);
     }
 

@@ -7,15 +7,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
-
+    EditText editText;
     public final static String EXTRA_MESSAGE = "com.inkwalkar.testapp.MainActivity Message :";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        editText = (EditText) findViewById(R.id.content);
     }
 
 
@@ -41,11 +43,11 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void SendMessage(View view){
-        Intent intent = new Intent(this, SendActivity.class);
-        EditText editText = (EditText) findViewById(R.id.content);
+    public void sendMessage(View view){
+        Intent intent = new Intent(getApplicationContext(), SendActivity.class);
         String message= editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 }

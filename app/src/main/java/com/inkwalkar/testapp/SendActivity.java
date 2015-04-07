@@ -14,11 +14,12 @@ public class SendActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
+        setContentView(R.layout.activity_send);
+        /*Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(message);
-        setContentView(R.layout.activity_send);
+        textView.setText(message);*/
+
     }
 
 
